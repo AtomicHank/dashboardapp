@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Flight Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="header-left">
+        <h1>✈️ Flight Tracker</h1>
+        <div class="location-info">
+          <span id="current-location">Oberjosbach, Germany</span>
+          <span class="separator">|</span>
+          <span id="tracking-radius">Tracking: 100km radius</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <button id="refresh-btn" class="control-btn">🔄 Refresh</button>
+        <button id="settings-btn" class="control-btn">⚙️ Settings</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Flight Map (Full Screen) -->
+      <div class="map-container">
+        <div id="map"></div>
+        
+        <!-- Map Controls Overlay -->
+        <div class="map-controls">
+          <div class="zoom-controls">
+            <button id="zoom-in" class="map-btn">+</button>
+            <button id="zoom-out" class="map-btn">-</button>
+          </div>
+          <div class="layer-controls">
+            <button id="toggle-labels" class="map-btn">🏷️</button>
+            <button id="toggle-weather" class="map-btn">🌤️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel for Flight List -->
+      <div class="right-panel">
+        <div class="panel-header">
+          <h2>📍 Nearby Flights</h2>
+          <div class="flight-count">
+            <span id="flight-count">0</span> flights tracked
+          </div>
+        </div>
+        
+        <div class="flight-filters">
+          <select id="sort-filter">
+            <option value="distance">Sort by Distance</option>
+            <option value="altitude">Sort by Altitude</option>
+            <option value="speed">Sort by Speed</option>
+            <option value="callsign">Sort by Callsign</option>
+          </select>
+          
+          <div class="filter-options">
+            <label>
+              <input type="checkbox" id="filter-commercial" checked> Commercial
+            </label>
+            <label>
+              <input type="checkbox" id="filter-private" checked> Private
+            </label>
+            <label>
+              <input type="checkbox" id="filter-cargo" checked> Cargo
+            </label>
+          </div>
+        </div>
+
+        <div id="flights-list" class="flights-list">
+          <!-- Flight items will be populated here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="status-left">
+        <span id="connection-status">🟢 Connected</span>
+        <span class="separator">|</span>
+        <span id="last-update">Last update: --:--</span>
+      </div>
+      <div class="status-right">
+        <span id="api-status">API: Ready</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

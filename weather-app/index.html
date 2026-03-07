@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Weather</h1>
+  <div class="container">
+    <div class="left-panel">
+      <div id="output"></div>
+      <h2>Weather Map</h2>
+      <div id="map" style="height: 400px;"></div>
+    </div>
+    <div class="right-panel">
+      <h2>10-Day Forecast</h2>
+      <div id="forecast-container"></div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
