@@ -23,7 +23,7 @@ const CONFIG = {
   // API configurations
   apis: {
     weather: {
-      key: '2f8a680af17b41428c644f8bf2d43dda',
+      key: '',
       baseUrl: 'https://api.openweathermap.org/data/2.5'
     },
     flights: {
