@@ -1,4 +1,4 @@
-const apiKey = '2f8a680af17b41428c644f8bf2d43dda'; // Your OpenWeatherMap API Key
+const apiKey = ''; // Your OpenWeatherMap API Key
 
 // Load current weather and forecast
 async function getWeather() {
